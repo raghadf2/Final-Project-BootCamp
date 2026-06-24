@@ -118,17 +118,15 @@ The store uploads its sales data → AI analyzes the data and generates a market
 ---
 
 
-### 🟣 رغد البقمي — بيانات المبيعات + تحليل AI + اقتراح الحملات + الإجازات + الحملات + نتائج الحملات (endpoint 65)
 
-النطاق: `SalesRecord`, `SalesRecordItem`, `AIAnalysis`, `CampaignSuggestion`, `Holiday`, `Campaign`, `CampaignResult`
+### 🟣 رغد — *بيانات المبيعات + تحليل AI + اقتراح الحملات + الإجازات* (46)
+النطاق: `AIAnalysis`, `CampaignSuggestion`, `SalesRecord`, `SalesRecordItem`, `Holiday`
 
 <details open>
-<summary><b>AIAnalysis</b> · <code>/api/v1/ai-analysis</code> (29)</summary>
+<summary><b>AIAnalysis</b> · <code>/api/v1/ai-analysis</code></summary>
 
 | Method | Path |
 |--------|------|
-| GET | `/get` |
-| GET | `/get/{id}` |
 | GET | `/get-by-sales-record/{salesRecordId}` |
 | GET | `/peak-hours/{analysisId}` |
 | GET | `/slow-hours/{analysisId}` |
@@ -155,22 +153,18 @@ The store uploads its sales data → AI analyzes the data and generates a market
 | GET | `/latest/branch/{branchId}` |
 | GET | `/{analysisId}/dashboard` |
 | POST | `/{analysisId}/send-email-summary` |
-| DELETE | `/delete/{id}` |
 </details>
 
 <details>
-<summary><b>CampaignSuggestion</b> · <code>/api/v1/campaign-suggestion</code> (13)</summary>
+<summary><b>CampaignSuggestion</b> · <code>/api/v1/campaign-suggestion</code></summary>
 
 | Method | Path |
 |--------|------|
-| GET | `/get` |
-| GET | `/get/{id}` |
 | GET | `/get-by-ai-analysis/{aiAnalysisId}` |
 | POST | `/generate/{aiAnalysisId}` |
 | POST | `/regenerate/{aiAnalysisId}` |
 | POST | `/add/analysis/{aiAnalysisId}` |
 | PUT | `/update/{id}/analysis/{aiAnalysisId}` |
-| DELETE | `/delete/{id}` |
 | GET | `/approved/analysis/{analysisId}` |
 | GET | `/pending/analysis/{analysisId}` |
 | PUT | `/approve/{id}` |
@@ -179,34 +173,28 @@ The store uploads its sales data → AI analyzes the data and generates a market
 </details>
 
 <details>
-<summary><b>SalesRecord</b> · <code>/api/v1/sales-record</code> (7)</summary>
+<summary><b>SalesRecord</b> · <code>/api/v1/sales-record</code></summary>
 
 | Method | Path |
 |--------|------|
-| GET | `/get` |
-| GET | `/get/{id}` |
 | GET | `/get-by-branch/{branchId}` |
 | POST | `/add/branch/{branchId}` (Excel multipart) |
 | POST | `/import-google-sheet/branch/{branchId}` |
 | PUT | `/update/{id}/branch/{branchId}` |
-| DELETE | `/delete/{id}` |
 </details>
 
 <details>
-<summary><b>SalesRecordItem</b> · <code>/api/v1/sales-record-item</code> (6)</summary>
+<summary><b>SalesRecordItem</b> · <code>/api/v1/sales-record-item</code></summary>
 
 | Method | Path |
 |--------|------|
-| GET | `/get` |
-| GET | `/get/{id}` |
 | GET | `/get-by-sales-record/{salesRecordId}` |
 | POST | `/add/sales-record/{salesRecordId}` |
 | PUT | `/update/{id}/sales-record/{salesRecordId}` |
-| DELETE | `/delete/{id}` |
 </details>
 
 <details>
-<summary><b>Holiday</b> · <code>/api/v1/holidays</code> (2)</summary>
+<summary><b>Holiday</b> · <code>/api/v1/holidays</code></summary>
 
 | Method | Path |
 |--------|------|
@@ -215,29 +203,6 @@ The store uploads its sales data → AI analyzes the data and generates a market
 </details>
 
 
-<details>
-<summary><strong>Campaign</strong> · <code>/api/v1/campaigns</code> (5)</summary>
-
-| Method | Path |
-|---|---|
-| GET | `/{campaignId}/dashboard` |
-| GET | `/{campaignId}/qr-status` |
-| GET | `/remaining-coupons/{campaignId}` |
-| GET | `/type/{campaignId}` |
-| GET | `/source/{campaignId}` |
-
-</details>
-
-<details>
-<summary><strong>CampaignResult</strong> · <code>/api/v1/campaign-results</code> (3)</summary>
-
-| Method | Path |
-|---|---|
-| POST | `/generate-finished` |
-| GET | `/{campaignId}/dashboard` |
-| GET | `/qr-used/{campaignId}` |
-
-</details>
 
 ---
 
